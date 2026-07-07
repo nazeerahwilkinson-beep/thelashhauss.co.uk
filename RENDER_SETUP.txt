@@ -1,0 +1,15 @@
+Render Web Service settings
+
+Environment: Node
+Root Directory: backend
+Build Command: npm install
+Start Command: npm start
+
+Environment Variables:
+ALLOWED_ORIGIN=https://thelashhaus.co.uk
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=thelashhauss@gmail.com
+SMTP_PASS=<Google App Password>
+FROM_EMAIL=thelashhauss@gmail.com
