@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Lash Haus Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<main class="login-screen" id="loginScreen">
+  <form class="login-card" id="loginForm">
+    <h1>The Lash Haus Admin</h1>
+    <label>Email</label><input id="loginEmail" type="email" autocomplete="username">
+    <label>Password</label><input id="loginPassword" type="password" autocomplete="current-password">
+    <button>Login</button>
+  <button type="button" class="link-btn" id="showResetBtn">Reset password</button>
+  </form>
+
+  <form class="login-card hidden" id="resetPasswordForm">
+    <h1>Reset Admin Password</h1>
+    <p class="muted">Enter your admin email, then choose a new password.</p>
+    <label>Email</label>
+    <input id="resetEmail" type="email" autocomplete="username" required>
+    <label>New Password</label>
+    <input id="resetNewPassword" type="password" autocomplete="new-password" required>
+    <label>Confirm New Password</label>
+    <input id="resetConfirmPassword" type="password" autocomplete="new-password" required>
+    <button type="submit">Save New Password</button>
+    <button type="button" class="link-btn" id="backToLoginBtn">Back to Login</button>
+  </form>
+
+</main>
+
+<div class="app hidden" id="adminApp">
+  <aside>
+    <h2>The Lash Haus</h2>
+    <button class="tab active" data-tab="dashboard">Dashboard</button>
+    <button class="tab" data-tab="website">Homepage Layout</button>
+    <button class="tab" data-tab="gallery">Gallery</button>
+    <button class="tab" data-tab="slots">Booking Slots</button>
+    <button class="tab" data-tab="policies">Policies</button>
+    <button class="tab" data-tab="payments">Payments</button>
+    <button class="tab" data-tab="bookings">Bookings</button>
+    <button class="tab" data-tab="reviews">Reviews</button>
+    <button class="tab" data-tab="messages">Messages</button>
+    <button id="logoutBtn">Logout</button>
+  </aside>
+
+  <main>
+    <h1>Admin Control Panel</h1>
+
+    <section id="dashboard" class="panel active">
+      <div class="stats">
+        <div><b id="statBookings">0</b><span>Bookings</span></div>
+        <div><b id="statPendingReviews">0</b><span>Pending reviews</span></div>
+        <div><b id="statMessages">0</b><span>Messages</span></div>
+      </div>
+    </section>
+
+    <section id="website" class="panel">
+      <h2>Homepage Layout Control</h2>
+      <label>Homepage layout</label>
+      <select id="homeLayoutInput"><option value="split">Text left / image right</option><option value="centered">Centered text only</option><option value="full">Full image overlay</option></select>
+      <label>Homepage heading</label><textarea id="heroTitleInput"></textarea>
+      <label>Homepage subtitle</label><textarea id="heroSubtitleInput"></textarea>
+      <label>Moving banner speed</label><select id="bannerSpeedInput"><option value="slow">Slow</option><option value="medium">Medium</option><option value="fast">Fast</option></select>
+      <label>Moving banner text</label><textarea id="movingTextInput"></textarea>
+      <label>Instagram link</label><input id="instagramInput">
+      <label>TikTok link</label><input id="tiktokInput">
+      <label>Facebook link</label><input id="facebookInput">
+      <button id="saveAllBtn">Publish Changes</button>
+    </section>
+
+    <section id="gallery" class="panel">
+      <h2>Gallery Manager</h2>
+      <label>Gallery image URLs, one per line</label>
+      <textarea id="galleryImagesInput"></textarea>
+      <button id="saveGalleryBtn">Save Gallery</button>
+    </section>
+
+    <section id="slots" class="panel">
+      <h2>Booking Slots</h2>
+      <textarea id="slotsInput"></textarea>
+      <button id="saveSlotsBtn">Save Slots</button>
+    </section>
+
+    <section id="policies" class="panel">
+      <h2>Cancellation Policy</h2>
+      <label>Policy wording</label>
+      <textarea id="cancellationPolicyInput"></textarea>
+      <button id="savePolicyBtn">Save Policy</button>
+    </section>
+
+    <section id="payments" class="panel">
+      <h2>Payment Method</h2>
+      <label>Payment method</label>
+      <select id="paymentMethodInput"><option value="stripe_deposit">Stripe deposit only</option><option value="stripe_full">Stripe full payment</option><option value="manual">Manual payment link</option></select>
+      <label>Deposit amount GBP</label><input id="depositAmountInput" type="number" min="1">
+      <p>Stripe backend endpoint included: <code>/api/payment-link</code>. Add Stripe keys in Render.</p>
+      <button id="savePaymentBtn">Save Payment Settings</button>
+    </section>
+
+    <section id="bookings" class="panel"><h2>Bookings</h2><table><tbody id="bookingRows"></tbody></table></section>
+    <section id="reviews" class="panel"><h2>Reviews</h2><table><tbody id="reviewRows"></tbody></table></section>
+    <section id="messages" class="panel"><h2>Messages</h2><table><tbody id="messageRows"></tbody></table></section>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="admin.js"></script>
+</body>
+</html>
