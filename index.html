@@ -1,23 +1,189 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Lash Haus</title>
-  <style>
-    body{margin:0;font-family:Arial,sans-serif;background:#fbf6f2;color:#342724;display:grid;place-items:center;min-height:100vh;text-align:center;padding:24px}
-    .card{background:white;border-radius:28px;padding:32px;max-width:680px;box-shadow:0 20px 60px rgba(0,0,0,.1)}
-    h1{font-size:44px;margin:0 0 12px}
-    a{display:inline-block;margin:8px;padding:14px 22px;border-radius:999px;background:#342724;color:white;text-decoration:none;font-weight:bold}
-    a.secondary{background:#c7a15d}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Lash Haus | Luxury Lash Studio Birmingham</title>
+  <meta name="description" content="The Lash Haus is a luxury lash studio in Birmingham offering classic lashes, hybrid lashes, Russian volume, lash lifts and brow treatments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="client.css" />
 </head>
 <body>
-  <div class="card">
-    <h1>The Lash Haus</h1>
-    <p>Choose which separate site you want to open.</p>
-    <a href="client-site/index.html">Open Client Website</a>
-    <a class="secondary" href="admin-site/admin.html">Open Admin Dashboard</a>
-  </div>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home">The <span>Lash</span> Haus</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="links" id="navLinks">
+        <a href="#treatments">Treatments</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Book</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a class="btn small" href="#booking">Book Appointment</a><a href="../admin-site/admin.html">Admin</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Premium Eyelash Extensions Birmingham</p>
+      <h1>Luxury Eyelash Extensions in Birmingham</h1>
+      <p class="lead">Bespoke lash artistry designed to enhance your natural beauty with soft, long-lasting, beautifully styled lash sets.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#booking">Book Appointment</a>
+        <a class="btn light" href="#treatments">View Treatments</a>
+      </div>
+      <div class="trust-grid">
+        <div><strong>Certified Artist</strong><span>Safe, hygienic treatments</span></div>
+        <div><strong>Premium Products</strong><span>Lightweight lash sets</span></div>
+        <div><strong>Birmingham Based</strong><span>Luxury beauty experience</span></div>
+      </div>
+    </div>
+    <div class="hero-image reveal">
+      <div class="image-card">
+        <div class="caption">Soft glam. Clean finish. Beautiful retention.</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="moving-banner" aria-label="Promotions">
+    <div class="moving-track">
+      <span>New client appointments available this week</span>
+      <span>Luxury lash extensions in Birmingham</span>
+      <span>48-hour free cancellation window</span>
+      <span>Gift cards coming soon</span>
+      <span>Secure deposits through the website</span>
+      <span>New client appointments available this week</span>
+      <span>Luxury lash extensions in Birmingham</span>
+      <span>48-hour free cancellation window</span>
+      <span>Gift cards coming soon</span>
+      <span>Secure deposits through the website</span>
+    </div>
+  </section>
+
+  <main>
+    <section class="section reveal" id="treatments">
+      <p class="eyebrow">Services</p>
+      <h2>Treatments & Pricing</h2>
+      <p class="section-intro">Choose a natural everyday set or a fuller glamorous finish. Every appointment includes consultation and aftercare guidance.</p>
+      <div class="cards">
+        <article class="card"><h3>Classic Lashes</h3><p class="price">From £55</p><p>Natural one-to-one lash extensions, perfect for first-time clients or a soft everyday look.</p><a class="btn light full" href="#booking">Book Classic</a></article>
+        <article class="card"><h3>Hybrid Lashes</h3><p class="price">From £65</p><p>A beautiful mix of classic and volume lashes for soft fullness and texture.</p><a class="btn light full" href="#booking">Book Hybrid</a></article>
+        <article class="card"><h3>Russian Volume</h3><p class="price">From £75</p><p>Full, fluffy, glamorous lashes using lightweight fans for a premium finish.</p><a class="btn light full" href="#booking">Book Volume</a></article>
+        <article class="card"><h3>Mega Volume</h3><p class="price">From £90</p><p>Maximum glam for clients who love a bold, dramatic lash look.</p><a class="btn light full" href="#booking">Book Mega</a></article>
+        <article class="card"><h3>Lash Lift</h3><p class="price">From £45</p><p>Enhance your natural lashes with curl, lift, and definition.</p><a class="btn light full" href="#booking">Book Lash Lift</a></article>
+        <article class="card"><h3>Brow Lamination</h3><p class="price">From £40</p><p>Soft, lifted brows shaped to suit your face and style.</p><a class="btn light full" href="#booking">Book Brows</a></article>
+      </div>
+    </section>
+
+    <section class="section split-section reveal">
+      <div>
+        <p class="eyebrow">Transformation</p>
+        <h2>Before & After Lash Reveal</h2>
+        <p class="section-intro">A moving visual display helps clients see the transformation and feel confident before booking.</p>
+        <a class="btn" href="#booking">Book Your Transformation</a>
+      </div>
+      <div class="before-after">
+        <div class="after-layer" id="afterLayer"></div>
+        <input type="range" min="10" max="90" value="50" id="beforeAfterSlider" aria-label="Before and after slider">
+        <span class="label before">Before</span>
+        <span class="label after">After</span>
+      </div>
+    </section>
+
+    <section class="section reveal" id="gallery">
+      <p class="eyebrow">Gallery</p>
+      <h2>Featured Lash Work</h2>
+      <p class="section-intro">Tap any image to preview it. Replace these image links later with your real work.</p>
+      <div class="gallery">
+        <button class="photo" data-img="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1100&q=80" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80')" aria-label="Open gallery image"></button>
+        <button class="photo" data-img="https://images.unsplash.com/photo-1605980776566-0486c3ac7617?auto=format&fit=crop&w=1100&q=80" style="background-image:url('https://images.unsplash.com/photo-1605980776566-0486c3ac7617?auto=format&fit=crop&w=900&q=80')" aria-label="Open gallery image"></button>
+        <button class="photo" data-img="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1100&q=80" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80')" aria-label="Open gallery image"></button>
+        <button class="photo" data-img="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1100&q=80" style="background-image:url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=900&q=80')" aria-label="Open gallery image"></button>
+      </div>
+    </section>
+
+    <section class="section booking-section reveal" id="booking">
+      <div class="booking-copy">
+        <p class="eyebrow">Online Booking</p>
+        <h2>Book your appointment</h2>
+        <p>Choose your treatment, select a preferred date and time, and send your request. This static version shows the front-end booking flow.</p>
+        <div class="policy-box">Free cancellation up to <strong>48 hours</strong> before your appointment. Inside 48 hours, deposits are normally non-refundable unless approved by admin.</div>
+      </div>
+      <form class="form" id="bookingForm">
+        <div class="field"><label for="treatment">Treatment</label><select id="treatment" required><option value="">Select treatment</option><option>Classic Lashes</option><option>Hybrid Lashes</option><option>Russian Volume</option><option>Mega Volume</option><option>Lash Lift</option><option>Brow Lamination</option></select></div>
+        <div class="field"><label for="date">Preferred date</label><input id="date" type="date" required /></div>
+        <div class="field"><label>Preferred time</label><div class="slots" id="slotList"></div></div>
+        <div class="field"><label for="name">Your name</label><input id="name" type="text" placeholder="Full name" required /></div>
+        <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com" required /></div>
+        <button class="btn full" type="submit">Send Booking Request</button>
+      </form>
+    </section>
+
+    <section class="section reveal" id="reviews">
+      <p class="eyebrow">Reviews</p>
+      <h2>Client Love</h2>
+
+      <div class="reviews" id="reviewList"></div>
+
+      <div class="review-submit">
+        <h3>Leave a review</h3>
+        <p>Reviews are sent to admin first and only appear publicly after approval.</p>
+        <form class="form" id="reviewForm">
+          <div class="field">
+            <label for="reviewName">Your name</label>
+            <input id="reviewName" type="text" required />
+          </div>
+          <div class="field">
+            <label for="reviewRating">Rating</label>
+            <select id="reviewRating" required>
+              <option value="★★★★★">★★★★★ 5 stars</option>
+              <option value="★★★★☆">★★★★☆ 4 stars</option>
+              <option value="★★★☆☆">★★★☆☆ 3 stars</option>
+              <option value="★★☆☆☆">★★☆☆☆ 2 stars</option>
+              <option value="★☆☆☆☆">★☆☆☆☆ 1 star</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="reviewText">Review</label>
+            <textarea id="reviewText" rows="4" required></textarea>
+          </div>
+          <button class="btn full" type="submit">Submit Review for Approval</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact-section reveal" id="contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Contact The Lash Haus</h2>
+        <p class="section-intro">All appointment enquiries are handled through this website so nothing gets missed.</p>
+        <form class="form contact-form" id="contactForm">
+          <div class="field"><label for="contactName">Name</label><input id="contactName" type="text" required /></div>
+          <div class="field"><label for="contactEmail">Email</label><input id="contactEmail" type="email" required /></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" rows="5" required></textarea></div>
+          <button class="btn full" type="submit">Send Website Enquiry</button>
+        </form>
+      </div>
+      <aside class="contact-note">
+        <h3>Website-only contact</h3>
+        <p>Please use the booking form or website enquiry form for appointments. Social media links are provided for viewing work and updates.</p>
+        <div class="socials"><a href="#" data-social="Instagram">Instagram</a><a href="#" data-social="TikTok">TikTok</a><a href="#" data-social="Facebook">Facebook</a></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><a class="brand footer-brand" href="#home">The <span>Lash</span> Haus</a><p>Luxury lashes in Birmingham.</p></div>
+      <div><strong>Cancellation Policy</strong><p>Free cancellation up to 48 hours before appointment. Refunds inside 48 hours are manually reviewed.</p></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <div class="lightbox" id="lightbox" aria-hidden="true"><button class="btn light" id="closeLightbox">Close</button><img id="lightboxImg" alt="The Lash Haus gallery preview" /></div>
+  <script src="client.js"></script>
 </body>
 </html>
