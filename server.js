@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({ origin: process.env.ALLOWED_ORIGIN || "*" }));
 app.use(express.json());
 
-const TO_EMAIL = "thelashhauss@gmail.com";
+const TO_EMAIL = "nazeerah.wilkinson@gmail.com";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
