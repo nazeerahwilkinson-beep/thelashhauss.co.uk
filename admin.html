@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Lash Haus Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <main class="login-screen" id="loginScreen">
+    <form class="login-card" id="loginForm">
+      <p class="eyebrow">Private Admin Login</p>
+      <h1>The Lash Haus</h1>
+      <div class="field"><label>Email</label><input id="loginEmail" type="email" value="admin@thelashhaus.co.uk" required /></div>
+      <div class="field"><label>Password</label><input id="loginPassword" type="password" value="admin123" required /></div>
+      <button class="btn full" type="submit">Login</button>
+      <p class="hint">Prototype login: admin@thelashhaus.co.uk / admin123</p>
+    </form>
+  </main>
+
+  <div class="app hidden" id="adminApp">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">The <span>Lash</span> Haus</a>
+      <p>Admin Control</p>
+      <button class="tab active" data-tab="dashboard">Dashboard</button>
+      <button class="tab" data-tab="website">Website</button>
+      <button class="tab" data-tab="slots">Booking Slots</button>
+      <button class="tab" data-tab="bookings">Bookings</button>
+      <button class="tab" data-tab="reviews">Reviews</button>
+      <button class="tab" data-tab="messages">Messages</button>
+      <button class="tab" data-tab="settings">Settings</button>
+      <a class="side-link" href="index.html">Open Public Site</a>
+      <button class="side-link logout" id="logoutBtn">Logout</button>
+    </aside>
+
+    <section class="content">
+      <div class="topbar"><div><p class="eyebrow">Owner Dashboard</p><h1>Admin Control Panel</h1></div><button class="btn" id="saveAllBtn">Publish Changes</button></div>
+
+      <section class="panel tab-panel active" id="dashboard">
+        <div class="stats">
+          <div class="stat"><span id="statBookings">0</span><p>Total bookings</p></div>
+          <div class="stat"><span id="statPendingReviews">0</span><p>Pending reviews</p></div>
+          <div class="stat"><span id="statMessages">0</span><p>Messages</p></div>
+          <div class="stat"><span>£20</span><p>Deposit preview</p></div>
+        </div>
+        <div class="notice">This is a GitHub Pages prototype. The login is front-end only. For true secure login and live shared data, use a backend/database.</div>
+      </section>
+
+      <section class="panel tab-panel" id="website">
+        <h2>Website Control</h2>
+        <div class="field"><label>Homepage heading</label><textarea id="heroTitle" rows="2"></textarea></div>
+        <div class="field"><label>Homepage subtitle</label><textarea id="heroSubtitle" rows="3"></textarea></div>
+        <div class="field"><label>Moving banner text - one line each</label><textarea id="movingText" rows="6"></textarea></div>
+        <div class="field"><label>Instagram link</label><input id="instagram"></div>
+        <div class="field"><label>TikTok link</label><input id="tiktok"></div>
+        <div class="field"><label>Facebook link</label><input id="facebook"></div>
+      </section>
+
+      <section class="panel tab-panel" id="slots">
+        <h2>Booking Slot Manager</h2>
+        <p>Edit the available public booking time slots. One slot per line.</p>
+        <div class="field"><label>Available slots</label><textarea id="slotsInput" rows="8"></textarea></div>
+        <button class="btn" id="saveSlotsBtn">Save Slots</button>
+      </section>
+
+      <section class="panel tab-panel" id="bookings"><h2>Booking Requests</h2><table><thead><tr><th>Client</th><th>Appointment</th><th>Status</th><th>Action</th></tr></thead><tbody id="bookingRows"></tbody></table></section>
+      <section class="panel tab-panel" id="reviews"><h2>Review Moderation</h2><p>Client reviews are hidden until approved here.</p><table><thead><tr><th>Client</th><th>Rating</th><th>Review</th><th>Status</th><th>Action</th></tr></thead><tbody id="reviewRows"></tbody></table></section>
+      <section class="panel tab-panel" id="messages"><h2>Contact Messages</h2><table><thead><tr><th>Client</th><th>Email</th><th>Message</th><th>Status</th><th>Action</th></tr></thead><tbody id="messageRows"></tbody></table></section>
+      <section class="panel tab-panel" id="settings"><h2>Settings</h2><button class="btn danger" id="resetBtn">Reset Prototype Data</button></section>
+    </section>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="admin.js"></script>
+</body>
+</html>
