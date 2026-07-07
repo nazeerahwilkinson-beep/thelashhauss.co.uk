@@ -1,70 +1,42 @@
-# The Lash Haus v3 Publish Ready
+# The Lash Haus - Secure Admin Reset Build
 
-## Upload to GitHub
+## Added
+- Backend-based admin login
+- Initial admin password set to `nazeerahelvos`
+- Forgot password flow
+- Reset link sent to `thelashhauss@gmail.com`
+- Password stored as a bcrypt hash in the backend file `admin-auth.json`
 
-Upload these folders/files to your GitHub repository:
-- client-site/
-- admin-site/
-- backend/
+## Admin login
+Email:
+`admin@thelashhaus.co.uk`
 
-## Public links
+Password:
+`nazeerahelvos`
 
-Client site:
-https://thelashhaus.co.uk/client-site/index.html
-
-Admin site:
-https://thelashhaus.co.uk/admin-site/admin.html
-
-## Change admin password
-
-Open:
-admin-site/admin.js
-
-Find:
-ADMIN_PASSWORD='CHANGE_THIS_PASSWORD'
-
-Replace with your own password.
-
-## Render backend settings
+## Important Render settings
 
 Root Directory:
-backend
+`backend`
 
 Build Command:
-npm install
+`npm install`
 
 Start Command:
-npm start
+`npm start`
 
-## Render environment variables
+## Required Render environment variables
+Copy from:
+`backend/.env.example`
 
-Copy values from:
-backend/.env.example
+Most important:
+- `ADMIN_EMAIL=admin@thelashhaus.co.uk`
+- `ADMIN_INITIAL_PASSWORD=nazeerahelvos`
+- `ADMIN_URL=https://thelashhaus.co.uk/admin-site/admin.html`
+- `SMTP_PASS=your Gmail App Password`
 
-Add these extra Stripe values when ready:
-STRIPE_SECRET_KEY
-DEFAULT_DEPOSIT_AMOUNT
-CLIENT_URL
+## After uploading to GitHub
+Upload/replace all files in this ZIP and commit changes.
 
-## Publishing changes in GitHub
-
-1. Open your GitHub repository.
-2. Upload/replace changed files.
-3. Commit changes.
-4. Wait 1-2 minutes for GitHub Pages to update.
-
-## Admin controls included
-
-- Homepage layout: split, centered, full-image overlay
-- Moving banner speed: slow, medium, fast
-- Moving banner text
-- Booking time slots
-- Cancellation policy wording
-- Cancellation window
-- Payment method
-- Deposit amount
-- Review approval/hide
-- Booking status
-- Contact messages
-
-Important: static admin settings use browser local storage. For secure shared live control across devices, connect a database/auth system.
+Then in Render:
+Manual Deploy > Clear build cache & deploy
